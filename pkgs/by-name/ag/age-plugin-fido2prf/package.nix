@@ -4,7 +4,7 @@
   fetchFromGitHub,
   libfido2,
 }:
-buildGoModule (finalAttrs: rec {
+buildGoModule (finalAttrs: {
   pname = "age-plugin-fido2prf";
   version = "0.3.0";
 
@@ -15,7 +15,7 @@ buildGoModule (finalAttrs: rec {
     hash = "sha256-JGEn1xIzfLyoCWd/aRRG08Z/OoviEyZF+tGEfcj9DXw=";
   };
 
-  srcRoot = "${src}/fido2prf/cmd/age-plugin-fido2prf";
+  srcRoot = "${finalAttrs.src}/fido2prf/cmd/age-plugin-fido2prf";
   vendorHash = "sha256-XrgZBvNyVUhKJ87vfd9aZh6aW+JifJWUu/ggNQZKwo0=";
 
   ldflags = [
